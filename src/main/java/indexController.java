@@ -8,9 +8,8 @@ public class indexController implements Controller {
         ModelAndView mv = new ModelAndView();
         mv.addObject("data", "hello SPRING MVC !!!");
         System.out.println("indexController");
-        mv.setViewName("index.jsp");
+        // 맨 앞에 /: 절대경로, "": 상대경로
+        mv.setViewName("WEB-INF/view/index.jsp");
         return mv;
-
-
     }
 }
