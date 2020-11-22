@@ -8,8 +8,11 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd ">
 
     <bean id="/index" class="indexController"/>
+    <bean id="/notice/list" class="notice.ListController"/>
+    <bean id="/notice/detail" class="notice.DetailController"/>
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="WEB-INF/view/"></property>
+        <property name="prefix" value="/WEB-INF/view/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
 
