@@ -10,7 +10,12 @@
     <bean id="/index" class="controller.IndexController"/>
 
     <!-- 서비스 클래스 IoC 컨테이너에 담기 -->
-    <bean name="noticeService" class="service.NoticeService"/>
+    <bean name="noticeService" class="service.jdbc.JDBCNoticeService"/>
+
+    <!-- 여기서 JPA, JDBC 를 고르고 아래에서 인터페이스명으로 DI 해준다.
+    이렇게 되면 소스를 수정하지 않고도 설정파일만을 가지고 부품을 갈아끼울 수 있다. -->
+    <!--<bean name="noticeService" class="service.jpa.JPANoticeService"/>-->
+
     <!-- 서비스 객체 DI -->
     <bean id="/notice/list" class="controller.ListController">
         <property name="noticeService" ref="noticeService"/>

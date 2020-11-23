@@ -4,6 +4,7 @@ import entitiy.Notice;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 import service.NoticeService;
+import service.jdbc.JDBCNoticeService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
