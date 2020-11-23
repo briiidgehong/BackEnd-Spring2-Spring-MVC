@@ -7,9 +7,17 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd ">
 
-    <bean id="/index" class="controller.indexController"/>
-    <bean id="/notice/list" class="controller.ListController"/>
+    <bean id="/index" class="controller.IndexController"/>
+
+    <!-- 서비스 클래스 IoC 컨테이너에 담기 -->
+    <bean name="noticeService" class="service.NoticeService"/>
+    <!-- 서비스 객체 DI -->
+    <bean id="/notice/list" class="controller.ListController">
+        <property name="noticeService" ref="noticeService"/>
+    </bean>
+
     <bean id="/notice/detail" class="controller.DetailController"/>
+
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/view/"></property>
