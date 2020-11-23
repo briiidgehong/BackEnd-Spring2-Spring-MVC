@@ -10,7 +10,7 @@
        http://www.springframework.org/schema/context
        https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:annotation-config/>
+    <context:component-scan base-package="service.jdbc" />
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
@@ -19,6 +19,4 @@
         <property name="password" value="0000"/>
     </bean>
 
-    <!-- 서비스 클래스 IoC 컨테이너에 담기 -->
-    <bean name="noticeService" class="service.jdbc.JDBCNoticeService"></bean>
 </beans>

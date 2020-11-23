@@ -2,6 +2,9 @@ package service.jdbc;
 
 import entitiy.Notice;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import service.NoticeService;
 
 import javax.sql.DataSource;
@@ -10,6 +13,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+//의미론적 구분
+//@Component = @Controller = @Service = @Repository
+@Service
 public class JDBCNoticeService implements NoticeService {
 
     //Connect NoticeListController
