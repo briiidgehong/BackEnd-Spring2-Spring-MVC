@@ -3,6 +3,7 @@ package service.jdbc;
 import entitiy.Notice;
 import service.NoticeService;
 
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,6 +20,13 @@ public class JDBCNoticeService implements NoticeService {
         return getNoticeList("title","",page);
     }
     // 동일한 함수 3개중에 제일 인자가 많은거 하나만 구현하면 위처럼 return 값을 이용해서 다같이 사용 가능하다.
+
+    private DataSource dataSource;
+
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
     public List<Notice> getNoticeList(String field, String query, int page){
     // field : TITLE, WRITE_ID    query : where title like '%A%'
         List<Notice> list = new ArrayList<>();
@@ -32,11 +40,12 @@ public class JDBCNoticeService implements NoticeService {
         // 1, 11, 21, 31 -> 1+(page-1)*10
         // 10, 20, 30, 40 -> page*10
 
-        String url = "jdbc:oracle:thin:@localhost:1521/xe";
+        //String url = "jdbc:oracle:thin:@localhost:1521/xe";
 
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection con = DriverManager.getConnection(url, "C##MANGOZZELLI", "0000");
+            //Class.forName("oracle.jdbc.driver.OracleDriver");
+            //Connection con = DriverManager.getConnection(url, "C##MANGOZZELLI", "0000");
+            Connection con = dataSource.getConnection();
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1,"%"+query+"%");
             st.setInt(2,1+(page-1)*10);
@@ -70,7 +79,7 @@ public class JDBCNoticeService implements NoticeService {
             st.close();
             con.close();
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -93,11 +102,12 @@ public class JDBCNoticeService implements NoticeService {
                 " ) " ;
 
 
-        String url = "jdbc:oracle:thin:@localhost:1521/xe";
+        //String url = "jdbc:oracle:thin:@localhost:1521/xe";
 
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection con = DriverManager.getConnection(url, "C##MANGOZZELLI", "0000");
+            //Class.forName("oracle.jdbc.driver.OracleDriver");
+            //Connection con = DriverManager.getConnection(url, "C##MANGOZZELLI", "0000");
+            Connection con = dataSource.getConnection();
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1,"%"+query+"%");
             ResultSet rs = st.executeQuery();
@@ -109,7 +119,7 @@ public class JDBCNoticeService implements NoticeService {
             st.close();
             con.close();
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -123,11 +133,12 @@ public class JDBCNoticeService implements NoticeService {
         Notice notice = null;
         String sql = " SELECT * FROM NOTICE WHERE ID=? ";
 
-        String url = "jdbc:oracle:thin:@localhost:1521/xe";
+        //String url = "jdbc:oracle:thin:@localhost:1521/xe";
 
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection con = DriverManager.getConnection(url, "C##MANGOZZELLI", "0000");
+            //Class.forName("oracle.jdbc.driver.OracleDriver");
+            //Connection con = DriverManager.getConnection(url, "C##MANGOZZELLI", "0000");
+            Connection con = dataSource.getConnection();
             PreparedStatement st = con.prepareStatement(sql);
             st.setInt(1,id);
 
@@ -157,7 +168,7 @@ public class JDBCNoticeService implements NoticeService {
             st.close();
             con.close();
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -173,11 +184,12 @@ public class JDBCNoticeService implements NoticeService {
                 " AND ROWNUM = 1 " +
                 ")";
 
-        String url = "jdbc:oracle:thin:@localhost:1521/xe";
+        //String url = "jdbc:oracle:thin:@localhost:1521/xe";
 
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection con = DriverManager.getConnection(url, "C##MANGOZZELLI", "0000");
+            //Class.forName("oracle.jdbc.driver.OracleDriver");
+            //Connection con = DriverManager.getConnection(url, "C##MANGOZZELLI", "0000");
+            Connection con = dataSource.getConnection();
             PreparedStatement st = con.prepareStatement(sql);
             st.setInt(1,id);
 
@@ -207,7 +219,7 @@ public class JDBCNoticeService implements NoticeService {
             st.close();
             con.close();
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -221,11 +233,12 @@ public class JDBCNoticeService implements NoticeService {
                 " WHERE REGDATE < (SELECT REGDATE FROM WHERE ID=?) " +
                 " AND ROWNUM = 1 " ;
 
-        String url = "jdbc:oracle:thin:@localhost:1521/xe";
+        //String url = "jdbc:oracle:thin:@localhost:1521/xe";
 
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection con = DriverManager.getConnection(url, "C##MANGOZZELLI", "0000");
+            //Class.forName("oracle.jdbc.driver.OracleDriver");
+            //Connection con = DriverManager.getConnection(url, "C##MANGOZZELLI", "0000");
+            Connection con = dataSource.getConnection();
             PreparedStatement st = con.prepareStatement(sql);
             st.setInt(1,id);
 
@@ -255,7 +268,7 @@ public class JDBCNoticeService implements NoticeService {
             st.close();
             con.close();
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
