@@ -1,9 +1,17 @@
 package controller;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
-public class IndexController implements Controller {
+@Controller
+public class IndexController{
+
+    @RequestMapping("/index")
+    public void indexPage(){
+        System.out.println("view indexPage");
+    }
+    /*
     @Override
     public ModelAndView handleRequest(javax.servlet.http.HttpServletRequest httpServletRequest, javax.servlet.http.HttpServletResponse httpServletResponse) throws Exception {
 
@@ -14,4 +22,5 @@ public class IndexController implements Controller {
         //mv.setViewName("WEB-INF/view/index.jsp");
         return mv;
     }
+    */
 }
