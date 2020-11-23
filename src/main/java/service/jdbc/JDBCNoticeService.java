@@ -1,6 +1,7 @@
 package service.jdbc;
 
 import entitiy.Notice;
+import org.springframework.beans.factory.annotation.Autowired;
 import service.NoticeService;
 
 import javax.sql.DataSource;
@@ -21,6 +22,7 @@ public class JDBCNoticeService implements NoticeService {
     }
     // 동일한 함수 3개중에 제일 인자가 많은거 하나만 구현하면 위처럼 return 값을 이용해서 다같이 사용 가능하다.
 
+    @Autowired
     private DataSource dataSource;
 
     public void setDataSource(DataSource dataSource) {

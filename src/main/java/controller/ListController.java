@@ -1,6 +1,7 @@
 package controller;
 
 import entitiy.Notice;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 import service.NoticeService;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 public class ListController implements Controller {
+
+    @Autowired
     private NoticeService noticeService;
 
     public void setNoticeService(NoticeService noticeService) {
