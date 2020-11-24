@@ -1,11 +1,4 @@
-# BackEnd-Spring2-Spring-MVC -> 완료
-
-BackEnd 개발의 큰 흐름 : Servlet -> JSP -> JSP MVC -> SPRING -> SPRING BOOT
-
-뒷단으로 갈수록 편의기능은 많아지나, 많은것이 wrapping 되있어 그 의미를 파악하기 힘든경우가 발생
-
-각각의 구현과 함께 바뀌어가는 과정을 한 cycle 정리할 예정  
-
+# BackEnd-Spring2-Spring-MVC -> 완료  
 BackEnd-Spring2-Spring-MVC 의 개발환경은 다음과 같습니다. 
 * IDE : IntelliJ IDEA
 * Git Tools : GitHub Desktop
