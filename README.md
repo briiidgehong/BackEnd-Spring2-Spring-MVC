@@ -1,4 +1,4 @@
-# BackEnd-Spring2-Spring-MVC
+# BackEnd-Spring2-Spring-MVC -> 완료
 
 BackEnd 개발의 큰 흐름 : Servlet -> JSP -> JSP MVC -> SPRING -> SPRING BOOT
 
