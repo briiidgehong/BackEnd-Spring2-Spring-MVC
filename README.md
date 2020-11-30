@@ -33,4 +33,4 @@ BackEnd-Spring2-Spring-MVC 의 개발환경은 다음과 같습니다.
 [xml->annotation 설정 변경: 2.bean 객체 선언부](https://github.com/mangozzelli/BackEnd-Spring2-Spring-MVC/commit/0b1790464cbac8668b2809183db7f4194ae30158)  
 [xml->annotation 설정 변경: 3. bean 객체 선언부 & url mapping](https://github.com/mangozzelli/BackEnd-Spring2-Spring-MVC/commit/90baaf464d0712b7d725b784775a98d274441e65)  
  
-##### NEXT - SPRINGBOOT PRIVATE PROJECT 🌱🚀
+##### NEXT - SPRIN PRIVATE PROJECT - Chatting Project 🌱🚀
