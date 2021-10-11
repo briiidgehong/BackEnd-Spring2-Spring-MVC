@@ -1,5 +1,5 @@
-# BackEnd-Spring2-Spring-MVC -> 완료  
-BackEnd-Spring2-Spring-MVC 개발환경 :
+# Java-Spring2-Spring-MVC -> 완료  
+Java-Spring2-Spring-MVC 개발환경 :
 * IDE : IntelliJ IDEA
 * Git Tools : GitHub Desktop
 * OS : Window 10
@@ -10,7 +10,7 @@ BackEnd-Spring2-Spring-MVC 개발환경 :
 * springFramework-spring MVC
 * ojdbc-oracle / jstl
 
-※ 이 정리는 newLecture 강좌를 기반으로 작성되었습니다.
+※ 이 정리는 newLecture 유튜브 채널 강좌를 참조해 작성되었습니다.
 
 ## 주요 commit 내역☑️
 ### 1. maven 초기 환경 세팅:   
