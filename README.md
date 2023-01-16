@@ -10,7 +10,7 @@ Java-Spring2-Spring-MVC 개발환경 :
 * springFramework-spring MVC
 * ojdbc-oracle / jstl
 
-## 주요 commit 내역☑️
+## 주요 commit 내역☑️ (아래 링크를 클릭하면 해당 commit으로 이동합니다.)
 ### 1. maven 초기 환경 세팅:   
 [spring MVC initial](https://github.com/mangozzelli/BackEnd-Spring2-Spring-MVC/commit/d5943a4ae09d1559ad62111480d41cbaa740a0e8)  
   
